@@ -8,6 +8,7 @@ def totalguests():
     attendance = int(attendance)
     print("Approximately {} guests will attend.".format(attendance))
     pct_attend = (float(attendance)/float(totalg))*100
+    pct_attend = round(pct_attend,1)
     print("Your attendance rate will be about {}%.".format(pct_attend))
 
 totalguests()
