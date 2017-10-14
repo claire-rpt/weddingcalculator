@@ -134,8 +134,9 @@ def time_handle(time_var,preceremony,ceremony,postceremony,reception):
     return time_value
 
 def time_format(time_var):
-    militime = time_var
-    hours, minutes = militime.split(":")
+    total_minutes = time_var
+    minutes = total_minutes % 60
+    hours = (total_minutes - minutes) // 60
     hours, minutes = int(hours),int(minutes)
     setting = "AM"
     if hours >= 12:
