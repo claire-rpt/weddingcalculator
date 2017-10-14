@@ -1,9 +1,9 @@
 #application developed by managerclaire
 def logistics():
     #expects military time in hh:mm format
-    ceremonystart = raw_input("Ceremony start time: ")
+    ceremonystart = input("Ceremony start time: ")
     return ceremonystart
-    
+
 def timeformat(time_var):
     militime = time_var
     hours, minutes = militime.split(":")
@@ -52,6 +52,6 @@ def preceremony(ceremonyst):
         breakfast_t = makeup_t-breakfast
         wakeup_t = breakfast_t-morning
         strwake = str(wakeup_t)
-        
-    
+
+
 #dayoftimeline_calc()
