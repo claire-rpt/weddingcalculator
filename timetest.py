@@ -86,6 +86,7 @@ def consistent():
 
 def ceremony_variable(preceremony,ceremony,postceremony,reception):
     #ceremony start time in military
+    a_valid = False
     ceremonystart = input("Ceremony start time: ")
     ceremonystart = time_handle(ceremonystart,preceremony,ceremony,postceremony,reception)
     wakeup = ceremonystart - preceremony
@@ -94,6 +95,17 @@ def ceremony_variable(preceremony,ceremony,postceremony,reception):
     leave = timeformat(leave)
     print("Wake up at " + wakeup + ".")
     print("Reception ends at " + leave + ".")
+    while a_valid == False:
+        try:
+            acceptable = int(input("Enter 1 to end application or 2 to try the scenario again: "))
+            if acceptable == 1:
+                a_valid = True
+                return
+            elif acceptable == 2:
+                a_valid = True
+                ceremony_variable(preceremony,ceremony,postceremony,reception)
+        except ValueError:
+            a_valid = False
 
 def time_handle(time_var,preceremony,ceremony,postceremony,reception):
     h_valid = False
