@@ -42,7 +42,7 @@ def consistent():
             d_valid = True
         except ValueError:
             d_valid = False
-    while dtc_valid = False:
+    while dtc_valid == False:
         try:
             drive_to_ceremony = int(input("How long will the drive to the ceremony take? "))
             dtc_valid = True
@@ -76,7 +76,7 @@ def consistent():
             dtr_valid = False
     while r_valid == False:
         try:
-            reception = int(input("How long will the reception be"))
+            reception = int(input("How long will the reception be? "))
             r_valid = True
         except ValueError:
             r_valid = False
@@ -91,8 +91,8 @@ def ceremony_variable(preceremony,ceremony,postceremony,reception):
     ceremonystart = time_handle(ceremonystart,preceremony,ceremony,postceremony,reception)
     wakeup = ceremonystart - preceremony
     leave = ceremonystart + ceremony + postceremony + reception
-    wakeup = timeformat(wakeup)
-    leave = timeformat(leave)
+    wakeup = time_format(wakeup)
+    leave = time_format(leave)
     print("Wake up at " + wakeup + ".")
     print("Reception ends at " + leave + ".")
     while a_valid == False:
@@ -147,3 +147,5 @@ def time_format(time_var):
             hours -= 12
     time_f = ("%02d:%02d " + setting) % (hours, minutes)
     return time_f
+
+consistent()
