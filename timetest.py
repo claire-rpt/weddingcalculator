@@ -100,7 +100,7 @@ def ceremony_variable(preceremony,ceremony,postceremony,reception):
             acceptable = int(input("Enter 1 to end application or 2 to try the scenario again: "))
             if acceptable == 1:
                 a_valid = True
-                return
+                return;
             elif acceptable == 2:
                 a_valid = True
                 ceremony_variable(preceremony,ceremony,postceremony,reception)
